@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parameter Penilaian - Web Penilaian Mahasiswa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="decoration"></div>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="chapters.html"><i class="fas fa-book"></i> Chapter</a>
+    <a href="nilai.html"><i class="fas fa-graduation-cap"></i> Nilai</a>
+  </nav>
+
+  <div class="content">
+    <a href="#" id="backToStudents" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Daftar Mahasiswa</a>
+    
+    <h2>Parameter Penilaian</h2>
+    <p><strong>Chapter:</strong> <span id="chapterName"></span></p>
+    <p><strong>Mahasiswa:</strong> <span id="studentName"></span> (<span id="studentNrp"></span>)</p>
+    
+    <div id="alert" class="alert"></div>
+    
+    <div class="input-row">
+      <div>
+        <label for="parameterName">Nama Parameter</label>
+        <input type="text" id="parameterName" placeholder="Nama Parameter">
+      </div>
+      <button onclick="addParameter()">Tambah Parameter</button>
+    </div>
+    
+    <table id="parameterTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Parameter</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/parameters.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilai Mahasiswa - Web Penilaian Mahasiswa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="decoration"></div>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="chapters.html"><i class="fas fa-book"></i> Chapter</a>
+    <a href="nilai.html"><i class="fas fa-graduation-cap"></i> Nilai</a>
+  </nav>
+
+  <div class="content">
+    <h2>Nilai Mahasiswa</h2>
+    <div id="alert" class="alert"></div>
+    
+    <div class="input-row">
+      <div>
+        <label for="chapterFilter">Filter Chapter</label>
+        <select id="chapterFilter" onchange="filterStudents()">
+          <option value="">Semua Chapter</option>
+        </select>
+      </div>
+    </div>
+    
+    <table id="nilaiTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>NRP</th>
+          <th>Chapter</th>
+          <th>Total Kesalahan</th>
+          <th>Nilai</th>
+          <th>Predikat</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
+    <div id="detailNilai" style="display:none;" class="grade-details">
+      <h3>Detail Nilai Mahasiswa: <span id="studentDetailName"></span></h3>
+      
+      <table id="parameterTable">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Jumlah Kesalahan</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <th>Total</th>
+            <th id="totalDetailErrors">0</th>
+          </tr>
+        </tfoot>
+      </table>
+      
+      <div style="margin-top: 20px;">
+        <table>
+          <tr><th>Nilai Dasar</th><td>90</td></tr>
+          <tr><th>Total Pengurangan</th><td id="totalDeduction">0</td></tr>
+          <tr><th>Nilai Akhir</th><td id="finalGrade">0</td></tr>
+          <tr><th>Predikat</th><td id="predikat"></td></tr>
+          <tr><th>Status</th><td id="status"></td></tr>
+        </table>
+      </div>
+      
+      <div class="input-row" style="margin-top: 20px;">
+        <label>Catatan Penguji:</label>
+        <textarea id="catatanPenguji" rows="4" placeholder="Tambahkan catatan..."></textarea>
+      </div>
+      
+      <div class="input-row">
+        <label>Tanda Tangan Penguji:</label>
+        <input type="file" accept="image/*" id="signatureFile">
+      </div>
+      
+      <button onclick="saveFeedback()" class="btn" style="margin-top: 20px;">Simpan Catatan</button>
+      
+      <div class="predikat-info">
+        <h4>Keterangan Predikat:</h4>
+        <p>86-90: Istimewa</p>
+        <p>78-85: Sangat Baik</p>
+        <p>65-77: Baik</p>
+        <p>50-64: Cukup</p>
+        <p>&lt;50: Kurang</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/nilai.js"></script>
+</body>
+</html>

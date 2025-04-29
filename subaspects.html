@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-Aspek Penilaian - Web Penilaian Mahasiswa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="decoration"></div>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="chapters.html"><i class="fas fa-book"></i> Chapter</a>
+    <a href="nilai.html"><i class="fas fa-graduation-cap"></i> Nilai</a>
+  </nav>
+
+  <div class="content">
+    <a href="#" id="backToParameters" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Parameter</a>
+    
+    <h2>Sub-Aspek Penilaian</h2>
+    <p><strong>Chapter:</strong> <span id="chapterName"></span></p>
+    <p><strong>Mahasiswa:</strong> <span id="studentName"></span> (<span id="studentNrp"></span>)</p>
+    <p><strong>Parameter:</strong> <span id="parameterName"></span></p>
+    
+    <div id="alert" class="alert"></div>
+    
+    <div class="input-row">
+      <div>
+        <label for="subaspectName">Nama Sub-Aspek</label>
+        <input type="text" id="subaspectName" placeholder="Nama Sub-Aspek">
+      </div>
+      <button onclick="addSubaspect()">Tambah Sub-Aspek</button>
+    </div>
+    
+    <table id="subaspectTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Sub-Aspek</th>
+          <th>Jumlah Kesalahan</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
+    <div style="margin-top: 20px;">
+      <h3>Total Kesalahan: <span id="totalErrors">0</span></h3>
+      <button onclick="saveEvaluation()" class="btn">Simpan Penilaian</button>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/subaspects.js"></script>
+</body>
+</html>
